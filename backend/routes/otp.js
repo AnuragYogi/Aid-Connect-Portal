@@ -7,8 +7,8 @@ const router = express.Router();
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'maxrushto77@gmail.com',
-    pass: 'nwwr nynd vque gter'
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
   }
 });
 
@@ -48,7 +48,7 @@ router.post('/send-otp', async (req, res) => {
 
     // Send email
     const mailOptions = {
-      from: 'maxrushto77@gmail.com',
+      from: process.env.EMAIL_USER,
       to: email,
       subject: 'OTP Verification - Scheme Portal',
       html: `
@@ -68,7 +68,7 @@ router.post('/send-otp', async (req, res) => {
     await transporter.verify();
     const info = await transporter.sendMail(mailOptions);
     console.log('Email sent:', info.messageId);
-    res.json({ message: 'OTP sent successfully', otp: otp }); // Remove otp from response in production
+    res.json({ message: 'OTP sent successfully' }); // Remove otp from response in production
 
   } catch (error) {
     console.error('OTP send error:', error);
