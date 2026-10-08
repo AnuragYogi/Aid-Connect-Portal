@@ -34,7 +34,7 @@ function Profile() {
 
   const fetchUserData = async (userId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/auth/users/${userId}`);
+      const response = await fetch(`https://aid-connect-portal-e6rb.onrender.com/api/auth/users/${userId}`);
       const userData = await response.json();
       setUser(userData);
     } catch (error) {
@@ -47,7 +47,7 @@ function Profile() {
 
   const fetchUserApplications = async (userId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/applications/user/${userId}`);
+      const response = await fetch(`https://aid-connect-portal-e6rb.onrender.com/api/applications/user/${userId}`);
       const data = await response.json();
       setApplications(data);
     } catch (error) {
@@ -101,7 +101,7 @@ function Profile() {
               <div className="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center overflow-hidden border border-gray-200">
                 {user?.photo ? (
                   <img 
-                    src={`http://localhost:5000/uploads/${user.photo}`} 
+                    src={`https://aid-connect-portal-e6rb.onrender.com/uploads/${user.photo}`} 
                     alt="Profile" 
                     className="w-full h-full object-cover"
                   />

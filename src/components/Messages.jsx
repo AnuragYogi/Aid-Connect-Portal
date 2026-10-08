@@ -22,7 +22,7 @@ export default function Messages() {
 
   const fetchMessages = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/applications/messages/${user._id || user.id}`);
+      const response = await fetch(`https://aid-connect-portal-e6rb.onrender.com/api/applications/messages/${user._id || user.id}`);
       const data = await response.json();
       setMessages(data);
     } catch (error) {

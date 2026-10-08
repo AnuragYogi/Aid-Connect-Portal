@@ -139,7 +139,7 @@ function CameraCapture() {
       }
       
       // Upload to backend
-      const uploadResponse = await fetch('http://localhost:5000/api/documents/upload-photo', {
+      const uploadResponse = await fetch('https://aid-connect-portal-e6rb.onrender.com/api/documents/upload-photo', {
         method: 'POST',
         body: formData
       });

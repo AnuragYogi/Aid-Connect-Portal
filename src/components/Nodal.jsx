@@ -17,7 +17,7 @@ export default function Nodal(){
 
     const fetchSchemes = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/schemes');
+            const response = await fetch('https://aid-connect-portal-e6rb.onrender.com/api/schemes');
             const data = await response.json();
             setSchemes(data);
         } catch (error) {
@@ -29,8 +29,8 @@ export default function Nodal(){
         e.preventDefault();
         try {
             const url = editingScheme 
-                ? `http://localhost:5000/api/schemes/${editingScheme.id}`
-                : 'http://localhost:5000/api/schemes';
+                ? `https://aid-connect-portal-e6rb.onrender.com/api/schemes/${editingScheme.id}`
+                : 'https://aid-connect-portal-e6rb.onrender.com/api/schemes';
             
             const response = await fetch(url, {
                 method: editingScheme ? 'PUT' : 'POST',
@@ -61,7 +61,7 @@ export default function Nodal(){
     const handleDelete = async (id) => {
         if (confirm('Delete this scheme?')) {
             try {
-                const response = await fetch(`http://localhost:5000/api/schemes/${id}`, {
+                const response = await fetch(`https://aid-connect-portal-e6rb.onrender.com/api/schemes/${id}`, {
                     method: 'DELETE'
                 });
                 if (response.ok) {

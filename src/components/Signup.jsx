@@ -47,7 +47,7 @@ export default function Signup() {
       console.log('Attempting registration with:', { name: form.name, email: form.email });
       
       // Call backend API
-      const response = await fetch('http://localhost:5000/api/auth/register', {
+      const response = await fetch('https://aid-connect-portal-e6rb.onrender.com/api/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -21,7 +21,7 @@ const DocumentViewer = ({ applicationDocuments, applicationPhoto }) => {
               <span className="font-medium">Application Photo</span>
             </div>
             <a 
-              href={`http://localhost:5000/uploads/${applicationPhoto}`} 
+              href={`https://aid-connect-portal-e6rb.onrender.com/uploads/${applicationPhoto}`} 
               target="_blank" 
               rel="noopener noreferrer"
               className="px-3 py-1 bg-blue-500 text-white text-sm rounded hover:bg-blue-600"
@@ -42,7 +42,7 @@ const DocumentViewer = ({ applicationDocuments, applicationPhoto }) => {
                   <span className="font-medium">{label}</span>
                 </div>
                 <a 
-                  href={`http://localhost:5000/uploads/${applicationDocuments[key]}`} 
+                  href={`https://aid-connect-portal-e6rb.onrender.com/uploads/${applicationDocuments[key]}`} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="px-3 py-1 bg-green-500 text-white text-sm rounded hover:bg-green-600"
@@ -91,7 +91,7 @@ function Approval() {
 
   const fetchApplicationDetails = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/applications/${applicationId}`);
+      const response = await fetch(`https://aid-connect-portal-e6rb.onrender.com/api/applications/${applicationId}`);
       const data = await response.json();
       setApplication(data.application);
       setScheme(data.scheme);
@@ -104,7 +104,7 @@ function Approval() {
 
   const updateApplicationStatus = async (status) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/applications/${applicationId}/status`, {
+      const response = await fetch(`https://aid-connect-portal-e6rb.onrender.com/api/applications/${applicationId}/status`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status, remarks })
@@ -192,7 +192,7 @@ function Approval() {
                 {application.userId?.photo ? (
                   <img 
                     className="h-16 w-16 rounded-full object-cover border" 
-                    src={`http://localhost:5000/uploads/${application.userId.photo}`} 
+                    src={`https://aid-connect-portal-e6rb.onrender.com/uploads/${application.userId.photo}`} 
                     alt={application.userId.name} 
                   />
                 ) : (

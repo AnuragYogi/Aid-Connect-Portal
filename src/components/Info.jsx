@@ -35,7 +35,7 @@ function Info() {
 
   const loadUserData = async (userId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/auth/users/${userId}`);
+      const response = await fetch(`https://aid-connect-portal-e6rb.onrender.com/api/auth/users/${userId}`);
       const userData = await response.json();
       
       if (userData.isPersonalInfoCompleted) {
@@ -148,7 +148,7 @@ function Info() {
     
     setLoading(true);
     try {
-      const response = await fetch(`http://localhost:5000/api/auth/users/${user._id || user.id}/personal-info`, {
+      const response = await fetch(`https://aid-connect-portal-e6rb.onrender.com/api/auth/users/${user._id || user.id}/personal-info`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
